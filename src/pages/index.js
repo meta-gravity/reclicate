@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import SaveAs from "@/components/SaveAs";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -42,25 +44,27 @@ export default function Home() {
     }
   };
 
+  const handleDownloadExcel = () => {
+    router.push('/download')
+  }
+
   return (
-    <div className="container max-w-2xl mx-auto p-5">
+    <div className="flex container max-w-2xl mx-auto p-6 items-center">
       <Head>
-        <title>Replicate + Next.js</title>
+        <title>Reclicate</title>
       </Head>
 
-      <h1 className="py-6 text-center font-bold text-2xl">
-        Dream something with{" "}
-        <a href="https://replicate.com/stability-ai/sdxl?utm_source=project&utm_project=getting-started">
-          SDXL
-        </a>
+      <h1 className="py-8 text-center mx-auto font-bold text-3xl hover:text-blue-500 cursor-pointer items-center">
+        Dream something with Reclicate AI
       </h1>
 
       <form className="w-full flex" onSubmit={handleSubmit}>
         <input
           type="text"
-          className="flex-grow"
+          className="flex-grow borde"
           name="prompt"
           placeholder="Enter a prompt to display an image"
+          required
         />
         <button className="button" type="submit">
           Go!
@@ -82,7 +86,11 @@ export default function Home() {
             </div>
           )}
           <p className="py-3 text-sm opacity-50">status: {prediction.status}</p>
+          <div>
+            <SaveAs />
+          </div>
         </>
+
       )}
     </div>
   );
