@@ -11,7 +11,7 @@ export default function SaveAs() {
     //   "example.pdf",
       "relicate.png"
     );
-    saveAs("https:/https://2269-102-89-22-135.ngrok-free.app/image", "image.jpg");
+    saveAs("https:/https://2269-102-89-22-135.ngrok-free.app/", "image.jpg");
 //     var canvas = document.getElementById("my-canvas");
 //         canvas.toBlob(function(blob) 
 //         {

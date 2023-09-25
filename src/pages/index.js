@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import SaveAs from "@/components/SaveAs";
+import { Input } from "@/components/ui/input";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -49,7 +50,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex container max-w-2xl mx-auto p-6 items-center">
+    <div className="flex container text-center py-4 mx-auto p-6 items-center">
       <Head>
         <title>Reclicate</title>
       </Head>
@@ -59,16 +60,16 @@ export default function Home() {
       </h1>
 
       <form className="w-full flex" onSubmit={handleSubmit}>
-        <input
+        <Input
           type="text"
           className="flex-grow borde"
           name="prompt"
           placeholder="Enter a prompt to display an image"
           required
         />
-        <button className="button" type="submit">
+        <Button className="button" type="submit">
           Go!
-        </button>
+        </Button>
       </form>
 
       {error && <div>{error}</div>}
